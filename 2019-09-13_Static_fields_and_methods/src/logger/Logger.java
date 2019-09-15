@@ -12,16 +12,16 @@ public class Logger {
         this.clazz = clazz;
     }
 
-    public void info(Object obj) {
+    public void info(String msg) {
         printClassName();
-        System.out.print("info:");
-        System.out.println(obj);
+        System.out.print("info: ");
+        System.out.println(msg);
     }
 
-    public void error(Object obj) {
+    public void error(String msg) {
         printClassName();
-        System.out.print("error:");
-        System.out.println(obj);
+        System.out.print("error: ");
+        System.out.println(msg);
     }
 
     private void printClassName() {
