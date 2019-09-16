@@ -17,6 +17,7 @@ public class Main {
     Line must start with '[' and end with ']'. Elements in the line must
     be separated with commas (',').
 
+New commet just to something ---
     */
 
     public static void main(String[] args) {
