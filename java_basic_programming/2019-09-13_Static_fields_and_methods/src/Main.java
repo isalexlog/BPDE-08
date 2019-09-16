@@ -5,6 +5,7 @@ import java.lang.Math;
 public class Main {
 
     /*
+    ***
     In CircleUtils add validation into every method checking if radius
     is not negative. If radius is negative, log error with with error method
     of Logger class. and then return -1.
@@ -16,6 +17,7 @@ public class Main {
     into the console into the one line.
     Line must start with '[' and end with ']'. Elements in the line must
     be separated with commas (',').
+    new
 
     */
 
