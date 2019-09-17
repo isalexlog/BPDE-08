@@ -19,6 +19,8 @@ public class Main {
     Line must start with '[' and end with ']'. Elements in the line must
     be separated with commas (',').
 
+    new comment just to add smth to commit
+
     */
 
     public static void main(String[] args) {
