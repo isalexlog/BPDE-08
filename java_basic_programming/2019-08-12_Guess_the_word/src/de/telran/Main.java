@@ -23,25 +23,9 @@ public class Main {
         System.out.print("Please choose difficulty level (1 - easy, 2 - hard, 3 - super easy):");
         Scanner scanner = new Scanner(System.in);
 
-        GameState gameState = null;
 
-        while (gameState == null) {
-            switch (scanner.nextInt()) {
-                case 1:
-                    gameState = new LevelDifficultyEasy();
-                    break;
-                case 2:
-                    gameState = new LevelDifficultyHard();
-                    break;
-                case 3:
-                    gameState = new LevelDifficultySuperEasy();
-                    break;
-                default:
-                    System.out.println("You entered the wrong difficulty level. Please try again.");
-            }
-        }
-
-        Game game = new Game(gameState);
+        Level level = Level.getLevelByNumber(scanner.nextInt());
+        Game game = new Game(level.gameState);
         game.startNewGame();
 
     }
