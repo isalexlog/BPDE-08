@@ -9,15 +9,7 @@ public class MathOperations {
         int nums[] = new int[20];
 
         int randomNum = ThreadLocalRandom.current().nextInt((a + 1), b);
-
-        if ((randomNum < 1) || (randomNum < -1)) {
-
-            System.out.println("please choose two integers with a greater range");
-
-
-        } else {
-            System.out.println(randomNum);
-        }
+        
         System.out.print("[");
         for(int i =  0; i < nums.length; i++){
 
