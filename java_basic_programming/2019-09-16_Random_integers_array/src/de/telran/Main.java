@@ -11,6 +11,8 @@ public class Main {
         int high = 100;
 
 
+
+        //new comment
         for(int i = 0; i < a.length; i++){
             a[i] = getRandom(low, high);
             System.out.println(Arrays.toString(a));
