@@ -1,11 +1,13 @@
-import logger.Logger;
+package com.telran;
 
 import java.lang.Math;
+
+import static com.telran.CircleUtils.*;
 
 public class Main {
 
     /*
-    In CircleUtils add validation into every method checking if radius
+    In com.telran.CircleUtils add validation into every method checking if radius
     is not negative. If radius is negative, log error with with error method
     of Logger class. and then return -1.
 
@@ -23,10 +25,12 @@ public class Main {
     public static void main(String[] args) {
         Logger log = Logger.getLogger(Main.class);
 
-        log.info(CircleUtils.PI);
-        log.info(CircleUtils.circleLength(5));
-        log.info(CircleUtils.circleArea(5));
-        log.info(CircleUtils.squareEquivalent(1));
-        log.info(Math.sqrt(CircleUtils.PI));
+        log.info(PI);
+        log.info(circleLength(5));
+        log.info(circleArea(5));
+        log.info(squareEquivalent(1));
+        log.info(Math.sqrt(PI));
+
+        log.info(squareEquivalent(-1));
     }
 }

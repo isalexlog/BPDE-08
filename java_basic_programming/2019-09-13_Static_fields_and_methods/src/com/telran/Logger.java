@@ -1,4 +1,4 @@
-package logger;
+package com.telran;
 
 public class Logger {
 
