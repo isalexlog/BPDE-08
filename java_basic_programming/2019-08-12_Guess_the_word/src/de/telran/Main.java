@@ -6,17 +6,7 @@ import de.telran.game.state.*;
 import java.util.Scanner;
 public class Main {
 
-    /*
-    HW:
-    implement new difficulty level LevelDifficultySuperEasy:
-    - 3 guessed letters in a row  - +300 points
 
-    Possible features:
-    - open any letter in the word
-    - random number of points from predefined list (50, 100, 200, 300)
-    - if there is more then 1 same guessed letter in the word,
-    multiply points by number of the same guessed letters
-     */
 
     public static void main(String[] args) {
 
