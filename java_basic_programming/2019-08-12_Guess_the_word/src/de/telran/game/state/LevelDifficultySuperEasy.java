@@ -30,11 +30,22 @@ public class LevelDifficultySuperEasy extends AbstractGameState {
         numberOfGuessedLettersInRow++;
         if (numberOfGuessedLettersInRow % 3 == 0)
             points += 300;
+    private int numberOfTriesToGuessAWord = 2;
+    private boolean triedToGuessLetter = false;
+
+    @Override
+    public void playerGuessedWordAndWon() {
+
     }
 
     @Override
     public void guessedLetterWrong() {
         super.guessedLetterWrong();
         numberOfGuessedLettersInRow = 0;
+        numberOfTries = getNumberOfTries() + 2;
+        do {
+            super.guessedLetterWrong();
+        }
+        while (numberOfTries >= 0 && triedToGuessLetter);
     }
 }

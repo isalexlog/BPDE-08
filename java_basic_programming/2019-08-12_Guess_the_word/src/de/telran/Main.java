@@ -4,6 +4,23 @@ import de.telran.game.Game;
 import de.telran.game.state.*;
 
 import java.util.Scanner;
+
+/*
+HW:
+
+- 2 tries to guess a word;
+- 5 tries to make a mistake with letter;
+- 3 guessed letters in a row - + 300 points;
+
+Add validation and error message if user enters difficulty level that does not exist. Retry to enter difficulty level.
+
+Possible features:
+- open any letter in the word;
+- random number of points from a predefined list (50, 100, 200, 300);
+- if there is more than one guessed letter in the word;
+- multiply points by number of the same guessed letters.
+ */
+
 public class Main {
 
     /*
