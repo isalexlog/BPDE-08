@@ -20,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("Please choose difficulty level (1 - easy, 2 - super easy, 3 - hard):");
+        System.out.print("Please choose difficulty level (1 - super easy, 2 - easy, 3 - hard):");
         Scanner scanner = new Scanner(System.in);
 
         GameState gameState = null;
@@ -28,11 +28,11 @@ public class Main {
         while (gameState == null) {
             switch (scanner.nextInt()) {
                 case 1:
-                    gameState = new LevelDifficultyEasy();
+                    gameState = new LevelDifficultySuperEasy();
                     System.out.println(DifficultyLevel.getLevelDescriptionByLevelCode(1));
                     break;
                 case 2:
-                    gameState = new LevelDifficultySuperEasy();
+                    gameState = new LevelDifficultyEasy();
                     System.out.println(DifficultyLevel.getLevelDescriptionByLevelCode(2));
                     break;
                 case 3:
