@@ -3,6 +3,7 @@ package de.telran;
 import de.telran.game.Game;
 import de.telran.game.state.*;
 
+import java.util.Objects;
 import java.util.Scanner;
 public class Main {
 
@@ -19,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("Please choose difficulty level (1 - easy, 2 - hard, 3 - super easy):");
+        System.out.print("Please choose difficulty level (1 - easy, 2 - super easy, 3 - hard):");
         Scanner scanner = new Scanner(System.in);
 
         GameState gameState = null;
@@ -28,12 +29,15 @@ public class Main {
             switch (scanner.nextInt()) {
                 case 1:
                     gameState = new LevelDifficultyEasy();
+                    System.out.println(DifficultyLevel.getLevelDescriptionByLevelCode(1));
                     break;
                 case 2:
-                    gameState = new LevelDifficultyHard();
+                    gameState = new LevelDifficultySuperEasy();
+                    System.out.println(DifficultyLevel.getLevelDescriptionByLevelCode(2));
                     break;
                 case 3:
-                    gameState = new LevelDifficultySuperEasy();
+                    gameState = new LevelDifficultyHard();
+                    System.out.println(DifficultyLevel.getLevelDescriptionByLevelCode(3));
                     break;
                 default:
                     System.out.println("You entered the wrong difficulty level. Please try again.");
