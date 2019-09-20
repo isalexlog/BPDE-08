@@ -8,14 +8,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.print("Please write selected difficulty level (easy, medium, hard):");
+        System.out.print("Please write selected difficulty level in UPPERCASE (easy, medium, hard):");
         Scanner scanner = new Scanner(System.in);
 
         String str = scanner.nextLine();
         LevelChanger level = new LevelChanger(Level.valueOf(str));
         level.difficultyLevel();
 
-        GameState gameState = null;
 /*
 
         while (gameState == null) {

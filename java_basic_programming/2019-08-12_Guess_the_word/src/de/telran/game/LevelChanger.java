@@ -11,24 +11,23 @@ public class LevelChanger {
     }
 
     public void difficultyLevel(){
-        switch (level){
-            case easy:
-                System.out.println("You change easy");
-                gameState = new LevelDifficultySuperEasy();
-                break;
-            case medium:
-                System.out.println("You change medium");
-                gameState = new LevelDifficultyEasy();
-                break;
-            case hard:
-                System.out.println("You change hard");
-                gameState = new LevelDifficultyHard();
-                break;
-            default:
-                System.out.println("We have not level.");
-                break;
-
-
+        while (gameState == null) {
+            switch (level) {
+                case EASY:
+                    System.out.println("You change easy");
+                    gameState = new LevelDifficultySuperEasy();
+                    break;
+                case MEDIUM:
+                    System.out.println("You change medium");
+                    gameState = new LevelDifficultyEasy();
+                    break;
+                case HARD:
+                    System.out.println("You change hard");
+                    gameState = new LevelDifficultyHard();
+                    break;
+                default:
+                    System.out.println("You entered the wrong difficulty level. Please try again.");
+            }
         }
         Game game = new Game(gameState);
         game.startNewGame();
