@@ -21,7 +21,7 @@ public class Game {
 
     public void startNewGame() {
 
-        System.out.println("You are playing with class " + gameState.getClass().getName());
+        //System.out.println("You are playing with class " + gameState.getClass().getName());
         Word word = wordRepository.getRandomWord();
         wordToGuess = new WordToGuess(word.getWord(), word.getDescription());
         playerInteraction.informUserGameStarts(wordToGuess);
