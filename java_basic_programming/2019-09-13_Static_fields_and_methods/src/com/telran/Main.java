@@ -1,6 +1,7 @@
 package com.telran;
 
 import java.lang.Math;
+import java.util.Scanner;
 
 import static com.telran.CircleUtils.*;
 
@@ -41,12 +42,45 @@ public class Main {
     public static void main(String[] args) {
         Logger log = Logger.getLogger(Main.class);
 
-        log.info(PI);
-        log.info(circleLength(5));
-        log.info(circleArea(5));
-        log.info(squareEquivalent(1));
-        log.info(Math.sqrt(PI));
+        Scanner scanner = new Scanner(System.in);
 
-        log.info(squareEquivalent(-1));
+        System.out.println("Please enter your request: 1 - length, 2 - area, 3 - square equivalent, any other key to exit");
+        int choice = scanner.nextInt();
+
+        int radius = 0;
+        if (choice == 1 || choice == 2 || choice == 3) {
+            System.out.println("Please give me a radius");
+            radius = scanner.nextInt();
+        }
+
+        switch (choice) {
+            case 1:
+                try {
+                    log.info(circleLength(radius));
+                }
+                catch (WrongArgumentException e) {
+                    System.out.println("Wrong argument: " + e.getMessage());
+                }
+                break;
+            case 2:
+                try {
+                    log.info(circleArea(radius));
+                }
+                catch (WrongArgumentException e) {
+                    System.out.println("Wrong argument: " + e.getMessage());
+                }
+                break;
+            case 3:
+                try {
+                    log.info(squareEquivalent(radius));
+                }
+                catch (WrongArgumentException e) {
+                    System.out.println("Wrong argument: " + e.getMessage());
+                }
+                break;
+            default:
+                System.out.println("Bye!");
+                break;
+        }
     }
 }
