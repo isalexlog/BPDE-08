@@ -21,7 +21,6 @@ public class Main {
 
         System.out.println("Please enter your request: 1 - length, 2 - area, 3 - square equivalent, or any other way to exit");
         int number = scanner.nextInt();
-
         try {
             switch (number) {
                 case 1:
