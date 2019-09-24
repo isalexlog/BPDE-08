@@ -3,6 +3,25 @@ package de.telran;
 import java.io.*;
 
 public class FileUtils {
+
+    public static void createFile(String fileName){
+        try {
+            File file = new File("hello_word.txt");
+            if (!file.exists())
+                file.createNewFile();
+
+
+            PrintWriter pw = new PrintWriter(file);
+            pw.println("Everything is working");
+            pw.println("Hello word");
+            pw.println("And i Wont write number:" + 87);
+            pw.close();
+
+        } catch (IOException e){
+            System.out.println("Error: " + e);
+        }
+    }
+
     public static  void copyBinFile(String fileName, String newFileName) throws IOException{
 
         try (
@@ -38,4 +57,26 @@ public class FileUtils {
                 out.close();
         }
     }
+
+    public static void symbolConverterFile(String fileName, String newFileName) throws IOException{
+
+        BufferedReader in = new BufferedReader(new FileReader(fileName));
+        PrintWriter out = new PrintWriter(new FileWriter(newFileName));
+
+        int c;
+
+        while ((c = in.read())!= -1){
+            if(Character.isLowerCase(c)){
+                c = Character.toUpperCase(c);
+            }
+           else {
+                c = Character.toLowerCase(c);
+            }
+            out.write(c);
+        }
+        in.close();
+        out.close();
+    }
+
+
 }
