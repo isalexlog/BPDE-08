@@ -1,3 +1,2 @@
-Hello, World!
-Привет, мир!
-שלום עולם!
+HeLlO wOrLd!
+
