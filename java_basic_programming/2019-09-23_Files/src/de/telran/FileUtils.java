@@ -6,18 +6,18 @@ public class FileUtils {
 
     public static void changeTextFile(String fileName, String changedFileName) throws IOException {
         try (
-                FileInputStream in = new FileInputStream(fileName);
-                FileOutputStream out = new FileOutputStream(changedFileName)
+                FileReader in = new FileReader(fileName);
+                FileWriter out = new FileWriter(changedFileName)
         ) {
             int c;
             while ((c = in.read()) != -1) {
                 if(Character.isLowerCase(c))
-                    Character.toUpperCase(c);
+                    c = Character.toUpperCase(c);
                 else
-                    Character.toLowerCase(c);
+                    c = Character.toLowerCase(c);
+                out.write(c);
+                System.out.println((char)c);
             }
-            out.write(c);
-            System.out.println((char)c);
         }
     }
 

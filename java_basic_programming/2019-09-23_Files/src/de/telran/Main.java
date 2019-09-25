@@ -17,6 +17,5 @@ public class Main {
         //copyBinFile("hello_world.txt", "hello_world.txt");
         //copyTextFile("hello_world.txt", "hello_world2.txt");
         changeTextFile("hello_world.txt", "hello_world2.txt");
-
     }
 }
