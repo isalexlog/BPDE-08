@@ -19,12 +19,11 @@ public class FileUtils {
     }
 
     public static void copyTextFile(String fileName, String newFileName) throws IOException {
-        FileReader in = null;
-        FileWriter out = null;
 
-        try {
-            in = new FileReader(fileName);
-            out = new FileWriter(newFileName);
+        try (
+                FileReader in = new FileReader(fileName);
+                FileWriter out = new FileWriter(newFileName)
+        ) {
 
             int c;
             while ((c = in.read()) != -1) {
@@ -32,11 +31,30 @@ public class FileUtils {
                 out.write(" ");
                 System.out.println("'" + (char) c + "': " + c);
             }
-        } finally {
-            if (in != null)
-                in.close();
-            if (out != null)
-                out.close();
         }
     }
-}
+
+    public static void conversionTextFile(String fileName, String newFileName) throws IOException {
+
+        try (
+                FileReader in = new FileReader(fileName);
+                FileWriter out = new FileWriter(newFileName)
+        ) {
+
+            int c;
+            while ((c = in.read()) != -1) {
+                if (Character.isLowerCase(c)) {
+                    c = Character.toUpperCase(c);
+                } else {
+                    c = Character.toLowerCase(c);
+                }
+                    out.write(c);
+                }
+            }
+        }
+
+    }
+
+
+
+

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import static de.telran.FileUtils.copyBinFile;
 import static de.telran.FileUtils.copyTextFile;
+import static de.telran.FileUtils.conversionTextFile;
 
 public class Main {
 
@@ -15,8 +16,9 @@ public class Main {
     // punctuation symbols.
 
     public static void main(String[] args) throws IOException {
-        copyBinFile("hello_word.txt", "hello_world.txt");
+        //copyBinFile("hello_word.txt", "hello_world.txt");
         //copyTextFile("hello_word.txt", "hello_world2.txt");
+        conversionTextFile("hello_word.txt","hello_world2.txt");
 
     }
 }
