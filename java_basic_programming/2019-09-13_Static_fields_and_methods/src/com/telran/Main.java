@@ -36,7 +36,7 @@ public class Main {
     - calculate the desired value
     - use try catch to inform user that wrong argument was supplied
 
-    //New comment just to commit
+    //New comment  to commit
 
      */
 
