@@ -1,14 +1,12 @@
 package de.telran;
 
 import de.telran.game.Game;
-import de.telran.game.LevelEnum;
 import de.telran.game.WrongLevelCodeException;
-import de.telran.game.state.*;
+import de.telran.game.state.GameState;
 
 import java.util.Scanner;
 
-import static de.telran.game.LevelEnum.*;
-import static de.telran.game.LevelEnum.SUPER_EASY;
+import static de.telran.game.LevelEnum.getLevelByLevelCode;
 
 public class Main {
 
