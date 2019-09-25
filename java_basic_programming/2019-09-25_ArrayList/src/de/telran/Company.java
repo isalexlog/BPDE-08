@@ -45,4 +45,37 @@ public class Company {
     public void setShareCapital(int shareCapital) {
         this.shareCapital = shareCapital;
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", establishedYear=" + establishedYear +
+                ", shareCapital=" + shareCapital +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Company company = (Company) o;
+
+        if (establishedYear != company.establishedYear) return false;
+        if (shareCapital != company.shareCapital) return false;
+        if (name != null ? !name.equals(company.name) : company.name != null) return false;
+        return type != null ? type.equals(company.type) : company.type == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + establishedYear;
+        result = 31 * result + shareCapital;
+        return result;
+    }
 }

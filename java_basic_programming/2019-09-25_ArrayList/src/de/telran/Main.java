@@ -36,5 +36,27 @@ public class Main {
 
         System.out.println(companyList.size());
         System.out.println(companies.length);
+
+        System.out.println(companyList.get(1));
+        System.out.println(companyList.remove(1));
+        System.out.println(companyList.get(1));
+
+        companyList.add(new Company(
+           "IBM",
+           "public",
+           1945,
+           200000
+        ));
+
+
+
+        System.out.println(companyList.remove(new Company(
+                "IBM",
+                "public",
+                1945,
+                200000
+        )));
+
+
     }
 }
