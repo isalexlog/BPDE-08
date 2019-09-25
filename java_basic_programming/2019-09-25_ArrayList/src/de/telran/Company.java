@@ -1,11 +1,20 @@
 package de.telran;
 
+import java.util.List;
+
 public class Company {
 
     private String name;
     private String type;
     private int establishedYear;
     private int shareCapital;
+
+    public static void changeNameInList(List<Company> companyList, String name) {
+        for (Company company: companyList) {
+            if (company.getName().equals(name))
+                company.setName(new StringBuilder(name).reverse().toString());
+        }
+    }
 
     public Company(String name, String type, int establishedYear, int shareCapital) {
         this.name = name;
