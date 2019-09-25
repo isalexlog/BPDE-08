@@ -63,19 +63,25 @@ public class FileUtils {
         BufferedReader in = new BufferedReader(new FileReader(fileName));
         PrintWriter out = new PrintWriter(new FileWriter(newFileName));
 
-        int c;
+        try {
 
-        while ((c = in.read())!= -1){
-            if(Character.isLowerCase(c)){
-                c = Character.toUpperCase(c);
+            int c;
+
+            while ((c = in.read())!= -1){
+                if(Character.isLowerCase(c)){
+                    c = Character.toUpperCase(c);
+                }
+                else {
+                    c = Character.toLowerCase(c);
+                }
+                out.write(c);
             }
-           else {
-                c = Character.toLowerCase(c);
-            }
-            out.write(c);
+
+        } finally {
+            in.close();
+            out.close();
         }
-        in.close();
-        out.close();
+
     }
 
 
