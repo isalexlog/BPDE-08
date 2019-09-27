@@ -32,4 +32,16 @@ public class ArrayList<T> {
     public int getSize() {
         return size;
     }
+
+    public void remove(int index) {
+        for (int i = index + 1; i < size; i++) {
+            array[i - 1] = array[i];
+        }
+        size--;
+    }
+
+    public void printList() {
+        for (int i = 0; i < size; i++)
+            System.out.println("[" + i + "] = " + get(i));
+    }
 }
