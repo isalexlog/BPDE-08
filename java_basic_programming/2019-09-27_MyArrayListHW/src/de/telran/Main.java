@@ -52,6 +52,7 @@ public class Main {
         System.out.println("----------------------");
         System.out.println(employeeList);
         System.out.println("----------------------");
+
         System.out.println(employeeList.get(3));
         System.out.println("removed " + employeeList.remove(new Employee(
                 "Tom",
