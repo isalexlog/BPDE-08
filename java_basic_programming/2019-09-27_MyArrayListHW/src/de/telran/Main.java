@@ -1,13 +1,15 @@
 package de.telran;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Employee[] employees = new Employee[4];
+        Employee[] employees = new Employee[5];
 
         employees[0] = new Employee(
                 "Bob",
@@ -37,11 +39,13 @@ public class Main {
                 60000,
                 false);
 
+
         List<Employee> employeeList = new ArrayList<>();
         employeeList.add(employees[0]);
         employeeList.add(employees[1]);
         employeeList.add(employees[2]);
         employeeList.add(employees[3]);
+
 
         System.out.println(employeeList.size());
         System.out.println(employees.length);
@@ -49,7 +53,13 @@ public class Main {
         System.out.println(employeeList);
         System.out.println("----------------------");
         System.out.println(employeeList.get(3));
-        System.out.println("removed" + employeeList.remove(1));
+        System.out.println("removed " + employeeList.remove(new Employee(
+                "Tom",
+                "employer",
+                50,
+                60000,
+                false)));
+        System.out.println(employeeList);
         System.out.println("----------------------");
 
     }
