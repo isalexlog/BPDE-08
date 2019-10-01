@@ -29,6 +29,7 @@ public class ArrayList<T> {
 
     public T get(int index) {
         if(index > size - 1)
+
             throw new IndexOutOfBoundsException();
         return array[index];
     }
@@ -43,6 +44,7 @@ public class ArrayList<T> {
         }
         size--;
     }
+
 
     public void add (int index, ArrayList<T> values){
         T[] newArray = createArrayOfRequiredSize(values.getSize());
@@ -62,8 +64,13 @@ public class ArrayList<T> {
         return (T[]) new Objects[this.size + size];
     }
 
+
     public void printList() {
         for (int i = 0; i < size; i++)
             System.out.println("[" + i + "] = " + get(i));
+    }
+
+    private T[] createArrayOfRequiredSize(int size) {
+        return (T[]) new Object[this.size + size];
     }
 }
