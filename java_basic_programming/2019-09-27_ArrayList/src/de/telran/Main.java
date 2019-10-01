@@ -14,16 +14,16 @@ public class Main {
 
         ArrayList<String> list = new ArrayList<>();
         list.add("First");
-        System.out.println(list.getSize());
-        System.out.println(list.get(0).equals("First"));
+    //    System.out.println(list.getSize());
+    //    System.out.println(list.get(0).equals("First"));
 
         list.add("Second");
-        System.out.println(list.getSize());
-        System.out.println(list.get(1).equals("Second"));
+     //   System.out.println(list.getSize());
+      //  System.out.println(list.get(1).equals("Second"));
 
         list.add("Third");
-        System.out.println(list.getSize());
-        System.out.println(list.get(2).equals("Third"));
+      //  System.out.println(list.getSize());
+      //  System.out.println(list.get(2).equals("Third"));
 
         /*for (int i = 0; i < 1000; i++) {
             list.add(String.valueOf(i));
@@ -31,14 +31,28 @@ public class Main {
                 System.out.println("Error!!!");
         }*/
 
-        list.printList();
-        list.remove(0);
+      //  list.printList();
+      //  list.remove(0);
         System.out.println(list.getSize());
         System.out.println(list.get(0).equals("First"));
         System.out.println(list.get(0).equals("Second"));
         list.printList();
 
-        list.add("Fourth");
+     //   list.add("Fourth");
+     //   list.printList();
+        System.out.println("_______");
+
+        list.addAtIndex(2,"Insert");
         list.printList();
+
+        ArrayList<String> listInsert = new ArrayList<>();
+        listInsert.add("X");
+        listInsert.add("Y");
+        listInsert.add("Z");
+
+        System.out.println("_______");
+        list.addList(2,listInsert);
+        list.printList();
+
     }
 }

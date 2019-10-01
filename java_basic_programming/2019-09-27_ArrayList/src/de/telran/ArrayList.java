@@ -25,6 +25,42 @@ public class ArrayList<T> {
         size++;
     }
 
+    public void addAtIndex(int index, T value) {
+        if (size + 1 > array.length) {
+            T[] newArray = (T[]) new Object[array.length * 2];
+            for (int i = 0; i < array.length; i++) {
+                newArray[i] = array[i];
+            }
+            array = newArray;
+        }
+        for (int i = size; i > index; i--) {
+            array[i] = array[i - 1];
+
+        }
+        array[index] = value;
+        size++;
+    }
+
+    public void addList(int index, ArrayList<T> values) {
+        if (size + values.getSize() > array.length) {
+            T[] newArray = (T[]) new Object[size + values.getSize() + array.length];
+            for (int i = 0; i < array.length; i++) {
+                newArray[i] = array[i];
+            }
+            array = newArray;
+
+        }
+        for (int i = size + values.getSize() - 1; i > index + values.getSize() - 1; i--) {
+            array[i] = array[i - values.getSize()];
+        }
+
+        for (int i = index, j = 0; i < index + values.getSize(); i++, j++) {
+            array[i] = values.get(j);
+        }
+        size = size + values.getSize();
+    }
+
+
     public T get(int index) {
         return array[index];
     }
