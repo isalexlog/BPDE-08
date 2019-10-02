@@ -29,6 +29,10 @@ public class ArrayListTest {
 
     @Test
     public void getSize() {
+        for (int i = 0; i < 100; i++) {
+            arrayList.add(Integer.toString(i));
+        }
+        assertEquals(100, arrayList.getSize());
     }
 
     @Test(expected = IndexOutOfBoundsException.class)
@@ -41,6 +45,23 @@ public class ArrayListTest {
         arrayList.remove(0);
         arrayList.get(0);
     }
+
+    @Test
+    public void removeWith2Elements() {
+        arrayList.add("Str");
+        arrayList.add("Str1");
+        arrayList.remove(0);
+        assertEquals("Str1", arrayList.get(0));
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void removeWithException() {
+        arrayList.add("Str");
+        arrayList.add("Str1");
+        arrayList.remove(0);
+        assertEquals("Str1", arrayList.get(1));
+    }
+
 
     @Test
     public void addArrayListToCertainPosition() {
