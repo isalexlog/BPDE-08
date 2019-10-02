@@ -41,14 +41,7 @@ public class ArrayListTest {
         arrayList.remove(0);
         arrayList.get(0);
     }
-    @Test
-    public void removeElementFromArrayListWithMultipleElements(){
-        arrayList.add("A");
-        arrayList.add("B");
-        arrayList.add("C");
-        arrayList.remove(0);
-        assertEquals("B",arrayList.get(0));
-    }
+    
 
     @Test
     public void addArrayListToCertainPosition() {
