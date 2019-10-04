@@ -7,6 +7,7 @@ public class LinkedList<T> {
 
     private Node first;
     private Node last;
+    private int size = 0;
 
     class Node {
         Node next;
@@ -14,11 +15,8 @@ public class LinkedList<T> {
         T element;
     }
 
-    /*
-    HW
-     */
     public int getSize() {
-        return 0;
+        return size;
     }
 
     public void add(T element) {
@@ -48,18 +46,17 @@ public class LinkedList<T> {
         return current.element;
     }
 
-    /*
-    HW
-    */
+
     public T getFirst() {
-      return null;
+        Node current = first;
+
+        return current.element;
     }
 
-    /*
-    HW
-    */
+
     public T getLast() {
-        return null;
+        Node current = last;
+        return current.element;
     }
 
     /*

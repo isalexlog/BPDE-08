@@ -20,10 +20,22 @@ public class LinkedListTest {
     }
 
     @Test
-    public void get() {
+    public void getFirst() {
+
+        assertEquals("First", linkedList.getFirst());
+
     }
 
     @Test
-    public void remove() {
+    public void getLast() {
+
+        assertEquals("Third", linkedList.getLast());
     }
+
+   /* @Test
+    public void getSize() {
+
+    }*/
+
+
 }
