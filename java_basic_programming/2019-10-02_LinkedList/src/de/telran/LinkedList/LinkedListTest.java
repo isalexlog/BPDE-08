@@ -24,8 +24,14 @@ public class LinkedListTest {
         assertEquals("Third", linkedList.get(2));
     }
 
-    @Test
-    public void get() {
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void getElementWithIndexMoreThanSize() {
+        linkedList.get(3);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void getElementWithIndexLessThanZero() {
+        linkedList.get(-1);
     }
 
     @Test
@@ -38,12 +44,22 @@ public class LinkedListTest {
     @Test
     public void removeFirst() {
         linkedList.remove(0);
-        assertEquals("Third", linkedList.get(0));
+        assertEquals("Second", linkedList.get(0));
     }
 
     @Test
     public void removeLast() {
+        linkedList.remove(2);
+        assertEquals("Second", linkedList.getLast());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void removeWhenSizeIsOne() {
         linkedList.remove(0);
-        assertEquals("Third", linkedList.get(2));
+        linkedList.remove(0);
+        linkedList.remove(0);
+        assertEquals(0, linkedList.getSize());
+
+        linkedList.get(0);
     }
 }

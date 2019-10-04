@@ -4,6 +4,7 @@ package de.telran.LinkedList;
     HW: test required!!!
  */
 public class LinkedList<T> {
+    private int size = 0;
 
     private Node first;
     private Node last;
@@ -18,7 +19,7 @@ public class LinkedList<T> {
     HW
      */
     public int getSize() {
-        return 0;
+        return size;
     }
 
     public void add(T element) {
@@ -36,9 +37,14 @@ public class LinkedList<T> {
             node.prev = last;
             last = node;
         }
+        size++;
     }
 
     public T get(int index) {
+        if (size == 0)
+            throw new IndexOutOfBoundsException("Linked list is empty!");
+        if (index > size - 1 || index < 0)
+            throw new IndexOutOfBoundsException();
         int i = 0;
         Node current = first;
         while (i != index) {
@@ -59,13 +65,32 @@ public class LinkedList<T> {
     HW
     */
     public T getLast() {
-        return null;
+        return last.element;
     }
 
     /*
     HW
     */
     public void remove(int index) {
+        if (size == 1) {
+            first = null;
+            last = null;
+            size = 0;
+            return;
+        }
+        if (index == 0) {
+            first = first.next;
+            first.prev = null;
+            size--;
+            return;
+        }
+        if (index == getSize() - 1) {
+            last = last.prev;
+            last.next = null;
+            size--;
+            return;
+        }
+
         int i = 0;
         Node current = first;
         while (i != index) {
@@ -76,5 +101,6 @@ public class LinkedList<T> {
         Node b = current.next;
         a.next = b;
         b.prev = a;
+        size--;
     }
 }
