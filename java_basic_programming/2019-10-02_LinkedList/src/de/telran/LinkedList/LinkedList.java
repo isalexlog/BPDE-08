@@ -1,12 +1,17 @@
 package de.telran.LinkedList;
 
+import java.util.NoSuchElementException;
+
 /*
     HW: test required!!!
  */
 public class LinkedList<T> {
 
+
+    private int size = 0;
     private Node first;
     private Node last;
+
 
     class Node {
         Node next;
@@ -18,7 +23,7 @@ public class LinkedList<T> {
     HW
      */
     public int getSize() {
-        return 0;
+        return size;
     }
 
     public void add(T element) {
@@ -36,6 +41,7 @@ public class LinkedList<T> {
             node.prev = last;
             last = node;
         }
+        size++;
     }
 
     public T get(int index) {
@@ -52,20 +58,40 @@ public class LinkedList<T> {
     HW
     */
     public T getFirst() {
-      return null;
+        if (first == null) {
+            throw new NoSuchElementException();
+        } else {
+            return first.element;
+        }
+
     }
 
     /*
     HW
     */
     public T getLast() {
-        return null;
+        if (last == null) {
+            throw new NoSuchElementException();
+
+        } else {
+            return last.element;
+        }
     }
 
     /*
     HW
     */
-    public void remove(int index) {
-
+    public  void remove(int index) {
+        if (index > size){
+            throw new RuntimeException();
+        }
+//        Node prev = (Node)get(index-1);//ClassCastException:
+//        Node next = (Node)get(index+1);//ClassCastException:
+//
+//        prev.next = next;
+//        next.prev = prev;
+//
+//          size--;
+//
     }
 }
