@@ -66,6 +66,15 @@ public class LinkedList<T> {
     HW
     */
     public void remove(int index) {
-
+        int i = 0;
+        Node current = first;
+        while (i != index) {
+            i++;
+            current = current.next;
+        }
+        Node a = current.prev;
+        Node b = current.next;
+        a.next = b;
+        b.prev = a;
     }
 }
