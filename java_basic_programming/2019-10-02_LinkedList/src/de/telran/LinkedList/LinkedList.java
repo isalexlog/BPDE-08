@@ -18,7 +18,14 @@ public class LinkedList<T> {
     HW
      */
     public int getSize() {
-        return 0;
+        int counter = 1;
+        Node current = first;
+        while (current.next != null) {
+            current = current.next;
+            counter++;
+
+        }
+        return counter;
     }
 
     public void add(T element) {
@@ -52,20 +59,41 @@ public class LinkedList<T> {
     HW
     */
     public T getFirst() {
-      return null;
+        return first.element;
     }
 
     /*
     HW
     */
     public T getLast() {
-        return null;
+        return last.element;
     }
 
     /*
     HW
     */
     public void remove(int index) {
+        if (index == 0) {
+            first = first.next;
+            first.prev = null;
+            return;
+        }
+
+        int i = 0;
+        Node current = first;
+        while (i != index) {
+            i++;
+            current = current.next;
+        }
+        Node a = current.prev;
+        if (current.next == null) {
+            a.next = null;
+            last = a;
+            return;
+        }
+        Node b = current.next;
+        a.next = b;
+        b.prev = a;
 
     }
 }
