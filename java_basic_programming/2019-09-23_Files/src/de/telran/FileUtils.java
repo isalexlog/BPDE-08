@@ -53,8 +53,8 @@ public class FileUtils {
         public static void copyTextFilewithUpperandLowerCase(String fileName, String newFileName) throws IOException {
 
         try (
-                FileInputStream in = new FileInputStream(fileName);
-                FileOutputStream out = new FileOutputStream(newFileName)
+                FileReader in = new FileReader(fileName);
+                FileWriter out = new FileWriter(newFileName)
         ) {
             int c;
             while ((c = in.read()) != -1) {

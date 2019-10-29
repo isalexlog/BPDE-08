@@ -3,6 +3,7 @@ package de.telran;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -30,6 +31,10 @@ public class Main {
                 10000000);
 
         List<Company> companyList = new ArrayList<>();
+        /*
+        Strg + mausklick auf zb add >>>
+        Strg + alt + mausklick zb arraylist>>>
+         */
         companyList.add(companies[0]);
         companyList.add(companies[1]);
         companyList.add(companies[2]);
@@ -37,5 +42,35 @@ public class Main {
 
         System.out.println(companyList.size());
         System.out.println(companies.length);
+
+        System.out.println(companyList.get(1));
+        companyList.remove(1);
+        System.out.println(companyList.get(1));
+
+        companyList.add(new Company(
+                "IBM",
+                "public",
+                1945,
+                200000
+        ));
+
+        System.out.println(companyList.remove(new Company(
+                "IBM",
+                "public",
+                1945,
+                200000
+        )));
+
+        companyList.isEmpty();
+        System.out.println(companyList.isEmpty());
+
+      Company.changeNameInList(companyList, "IBM");
+        for(Company company : companyList) {
+            System.out.println(company);
+        }
+
+        for( int i = 0; i < companyList.size(); i++){
+            System.out.println(companyList.get(i));
+        }
     }
 }
