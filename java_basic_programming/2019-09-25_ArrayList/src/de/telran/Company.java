@@ -7,7 +7,7 @@ public class Company {
     private String name;
     private String type;
     private int establishedYear;
-    private int shareCapital;
+    private int shareCapital; //comment
 
     public static void changeNameInList(List<Company> companyList, String name) {
         for (Company company: companyList) {
