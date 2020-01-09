@@ -15,8 +15,8 @@ public class Main {
     // punctuation symbols.
 
     public static void main(String[] args) throws IOException {
-        copyBinFile("hello_word.txt", "hello_world.txt");
-        //copyTextFile("hello_word.txt", "hello_world2.txt");
+	copyBinFile("hello_word.txt", "hello_world.txt");
 
+	//copyTextFile("hello_word.txt", "hello_world.txt");
     }
 }
