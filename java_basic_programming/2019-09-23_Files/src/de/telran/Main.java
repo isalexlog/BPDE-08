@@ -2,8 +2,7 @@ package de.telran;
 
 import java.io.IOException;
 
-import static de.telran.FileUtils.copyBinFile;
-import static de.telran.FileUtils.copyTextFile;
+import static de.telran.FileUtils.*;
 
 public class Main {
 
@@ -16,7 +15,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         copyBinFile("hello_word.txt", "hello_world.txt");
-        //copyTextFile("hello_word.txt", "hello_world2.txt");
+        copyTextFile("hello_word.txt", "hello_world2.txt");
+        copyTextFileUpperAndLower("hello_word.txt", "ToUpper&Lower");
 
     }
 }
